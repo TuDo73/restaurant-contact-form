@@ -1,0 +1,252 @@
+.form-row {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.form-heading {
+  font-weight: $font-weight-bold;
+  margin: 20px 0;
+  font-size: 18px;
+  color: $dark;
+
+  @include max-sm {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+}
+
+.form-subheading {
+  font-size: 13px;
+  margin-bottom: 20px;
+
+  @include max-sm {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+.wrap-input {
+  position: relative;
+  border-bottom: 1px solid #adadad;
+  margin-bottom: 20px;
+
+  &.covid-verify {
+    border: none;
+
+    // &.invalid-value {
+    //   .covid-verify-select {
+    //     border: 1px solid $red-4;
+    //   }
+    // }
+
+    .covid-verify-select {
+      background-color: white;
+      border-radius: 4px;
+      display: inline-block;
+      font: inherit;
+      line-height: 1.5em;
+      padding: 0.5em 3.5em 0.5em 1em;
+      font-size: 16px !important; //fix auto zoom in input device
+
+      margin: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+        linear-gradient(135deg, gray 50%, transparent 50%),
+        linear-gradient(to right, #ccc, #ccc);
+      background-position: calc(100% - 20px) calc(1em + 2px),
+        calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+      background-size: 5px 5px, 5px 5px, 1px 1.5em;
+      background-repeat: no-repeat;
+
+      &:focus {
+        font-size: 16px !important; //fix auto zoom in input device
+      }
+    }
+  }
+}
+
+.focus-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #999;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &.invalid-value {
+    &:before {
+      background: $red-4;
+      width: 100%;
+    }
+
+    span {
+      color: $red-4;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: $blue;
+    transition: all 0.5s;
+  }
+
+  span {
+    transform: translateY(50%);
+    display: block;
+    transition: all 0.5s;
+
+    @include max-sm {
+      transform: translateY(20px);
+      font-size: 10px;
+    }
+  }
+}
+
+.validate-notify {
+  margin: -12px 0 20px 0;
+
+  span {
+    color: $red-4;
+    position: relative;
+    padding-left: 25px;
+
+    &:before {
+      font-family: "icon";
+      content: "\ea21";
+      position: absolute;
+      left: 0;
+      top: 1px;
+    }
+  }
+}
+
+.form-input {
+  height: 45px;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  background: white;
+  position: relative;
+  border-radius: 0;
+  font-family: $font-primary;
+  font-size: $font-size-default;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px; //fix auto zoom in input device
+
+  &:focus + .focus-input.invalid-value span,
+  &.has-value + .focus-input.invalid-value span {
+    color: $red-4;
+  }
+
+  &:focus + .focus-input span,
+  &.has-value + .focus-input span {
+    transform: translateY(-6px);
+    font-size: 12px;
+    color: $blue;
+
+    @include max-sm {
+      font-size: 10px;
+      transform: translateY(-4px);
+    }
+  }
+
+  &:focus + .focus-input:before,
+  &.has-value + .focus-input:before {
+    width: 100%;
+  }
+}
+
+.add-more-form {
+  display: flex;
+  align-items: center;
+
+  .add-more-btn {
+    width: 30px;
+    height: 30px;
+    background: $blue-2;
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+
+    span {
+      position: absolute;
+      background: $white;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      &:first-child {
+        width: 15px;
+        height: 1px;
+      }
+      &:last-child {
+        width: 1px;
+        height: 15px;
+      }
+    }
+  }
+}
+
+.confirm-block {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .submit-btn {
+    background: $blue-4;
+    color: $white;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: $font-weight-bold;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.1);
+
+    @include max-sm {
+      font-size: 16px;
+    }
+  }
+
+  .reCaptcha-error {
+    margin-top: 20px;
+    text-align: center;
+    color: #d11338;
+    font-size: 17px;
+    font-weight: 700;
+    width: 100%;
+  }
+
+  .confirm-text {
+    margin-top: 25px;
+  }
+}
+
+.datenschutz-btn {
+  background: $gray-7;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  color: $gray-4;
+  padding: 15px;
+  text-align: center;
+}

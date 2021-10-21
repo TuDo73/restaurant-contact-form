@@ -1,0 +1,156 @@
+header {
+  background: $dark-5;
+
+  .wrapper {
+    position: relative;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+
+    @include max-s {
+      padding-top: 60px;
+    }
+  }
+
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+  }
+
+  .bottom-header {
+    display: flex;
+    align-items: center;
+  }
+
+  .address {
+    // position: absolute;
+    top: 33px;
+    left: 0;
+    color: $yellow-5;
+    font-weight: $font-weight-bold;
+    font-size: 25px;
+    // margin-right: 20px;
+    margin-right: 100px;
+
+    @include max-sm {
+      top: 10px;
+    }
+
+    @include max-s {
+      font-size: 18px;
+    }
+  }
+
+  .text-header {
+    flex: 1;
+    margin-right: 20px;
+
+    @include max-sm {
+      margin-right: 50px;
+    }
+
+    @include max-s {
+      margin-right: 10px;
+      font-size: 12px;
+    }
+  }
+
+  .logo img {
+    height: 160px;
+
+    @include max-sm {
+      height: 80px;
+    }
+
+    @include max-s {
+      height: 60px;
+    }
+  }
+
+  .language-box {
+    position: absolute;
+    right: 0;
+
+    .lang-box-wrap {
+      background: white;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      height: 40px;
+      transition: height 0.3s;
+      display: flex;
+      flex-direction: column;
+
+      @include max-sm {
+        height: 30px;
+      }
+    }
+
+    .lang-opt {
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      padding-left: 10px;
+      min-height: 40px;
+      width: 100px;
+      order: 2;
+      align-items: center;
+      border-top: 1px solid #627b87;
+
+      @include max-sm {
+        min-height: 30px;
+        width: 75px;
+      }
+
+      &.active {
+        border-top: none;
+        order: 1;
+
+        &:after {
+          content: "\e948";
+          font-family: "icon" !important;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          // color: $dark;
+
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+
+      .lang-flag {
+        width: 35px;
+        height: 22px;
+        @include background-image;
+
+        @include max-sm {
+          width: 20px;
+          height: 12px;
+        }
+
+        &.de-flag {
+          background-image: url(#{$urlImg}/flag-ger.jpg);
+        }
+
+        &.vi-flag {
+          background-image: url(#{$urlImg}/flag-vi.jpg);
+        }
+      }
+
+      span {
+        margin: 0 5px 0 10px;
+
+        @include max-sm {
+          margin: 0 2px 0 5px;
+        }
+      }
+    }
+  }
+}
