@@ -465,7 +465,6 @@
   </main>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 import Customer from "@/services/Customer";
 import { Constants } from "@/global/constants.js";
@@ -801,7 +800,6 @@ export default {
     },
 
     validatePhone(value) {
-      // let numberFormat = Constants.REGEX.NUMBER_FORMAT;
       let numberFormat = /^0[0-9]+$/; // must start with 0
 
       if (value.match(numberFormat) || value == "") {

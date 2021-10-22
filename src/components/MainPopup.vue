@@ -31,7 +31,6 @@
   </div>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 
 export default {

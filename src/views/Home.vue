@@ -7,7 +7,6 @@
   </div>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 import Header from "@/components/Header.vue";
 import Form from "@/components/Form.vue";

@@ -94,7 +94,6 @@
   </div>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { Constants } from "@/global/constants.js";
 import { mapState } from "vuex";
 import Datepicker from "vuejs-datepicker";

@@ -15,7 +15,6 @@ const mutations = {
   // handle response from actions to update state
   setCompanyInfo(state, data) {
     state.companyInfo = data[0];
-    // console.log(state.companyInfo);
   },
 };
 

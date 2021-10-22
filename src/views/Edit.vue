@@ -5,9 +5,6 @@
         <span class="icon-cheveron-left"></span>
         Back
       </div>
-      <!-- <h2>
-        Edit Content
-      </h2> -->
       <div class="btn-wrap logout-box" @click="logout()">
         Logout
       </div>
@@ -135,7 +132,6 @@
   </div>
 </template>
 <script>
-import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 import firebase from "firebase";
 import Company from "@/services/Company";
@@ -202,15 +198,10 @@ export default {
       this.$router.push({ path: "/customer" });
     },
 
-    /***
-     * Upload image to frisebase server
-     * I do not upload image to S3 becasue I have to buy S3  that is not good for the credit :))
-     */
     uploadFile(e) {
       let files = e.target.files[0];
       // preview image , customer can see what happend with the logo
       this.createImage(files);
-      // let path_img = null;
       const storageRef = firebase
         .storage()
         .ref(`logo/${files.name}`)
@@ -227,7 +218,6 @@ export default {
         () => {
           storageRef.snapshot.ref.getDownloadURL().then((url) => {
             this.pathImg = url;
-            // console.log(this.pathImg);
           });
         }
       );

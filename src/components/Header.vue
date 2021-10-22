@@ -27,10 +27,6 @@
                 <div class="lang-flag vi-flag"></div>
                 <span>VI</span>
               </div>
-              <!-- <div class="lang-opt">
-                <div class="lang-flag de-flag"></div>
-                <span>EN</span>
-              </div> -->
             </div>
           </div>
         </div>
@@ -51,7 +47,6 @@
   </header>
 </template>
 <script>
-// import { globalFunction } from "@/global/global.js";
 import { mapState } from "vuex";
 
 export default {
