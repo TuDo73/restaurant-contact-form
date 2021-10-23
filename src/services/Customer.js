@@ -9,7 +9,6 @@ export default {
       const getCustomerResp = await Api(accessToken).get(`${url}`);
       return getCustomerResp.data;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },
@@ -22,7 +21,6 @@ export default {
       const getCustomerResp = await Api(accessToken).get(`${url}`);
       return getCustomerResp.data;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },
@@ -34,7 +32,6 @@ export default {
       const createCustomerResp = await Api().post(`${url}`, customer);
       return createCustomerResp;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },

@@ -9,7 +9,6 @@ export default {
       const companyRes = await Api(accessToken).post(`${url}`, data);
       return companyRes;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },
@@ -21,7 +20,6 @@ export default {
       const companyRes = await Api().get(`${url}`);
       return companyRes.data.data;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },

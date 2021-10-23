@@ -11,7 +11,6 @@ export default {
       });
       return excelResp.data;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },
@@ -26,7 +25,6 @@ export default {
       });
       return excelResp.data;
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },

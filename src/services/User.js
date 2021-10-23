@@ -9,7 +9,6 @@ export default {
       const loginResp = await Api().get(`${url}`);
       sessionStorage.setItem("tokenCovidTracking", loginResp.data.token);
     } catch (error) {
-      console.log("error:", error.response);
       return error.response;
     }
   },
